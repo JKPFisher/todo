@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="card" style="width: 400px">
+    <div class="card-body">
+      <h5 class="card-title">Todo App</h5>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Add your new todo"
+          [(ngModel)]="todoItem"
+        />
+        <button
+          class="btn btn-outline-primary"
+          type="button"
+          id="button-addon2"
+          (click)="handleAddBtn()"
+        >
+          Add
+        </button>
+      </div>
+      <div *ngFor="let todo of todoList; let i = index">
+        <div class="todo">
+          <p>{{ todo }}</p>
+          <button
+            class="btn btn-outline-secondary"
+            (click)="handleDeleteBtn(i)"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+      <button class="btn btn-outline-danger" (click)="handleClearBtn()">
+        Clear
+      </button>
+    </div>
+  </div>
+</div>
